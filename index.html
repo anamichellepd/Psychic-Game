@@ -3,8 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Psychic Game</title>
 </head>
 
@@ -26,14 +24,14 @@
 //Variables
 
 //Variables for letters
-var letters = ("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
-    ,"r","s","t","u","v","w","x","y","z");
+var computerChoices= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
+    ,"r","s","t","u","v","w","x","y","z"];
 
 //Variables for win, lose, guesses left and the guess
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
-var yourGuesses = 0;
+var yourGuesses = document.getElementById;
 
 //Variables to hold references to HTML places
 var directionsText = document.getElementById("directions-text");
@@ -49,10 +47,25 @@ function myFunction (stringToConsole){
 // function that runs when user presses a key
 document.onkeyup = function(event){
     var userGuess = event.key;
+
     var computerGuess =
-    letters[Math.floor(Math.random() * letters.length)];
-}
-if ()
+    computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+if (userGuess===computerGuess){
+    wins++
+} 
+else {
+    losses++;
+    guessesLeft--;
+    yourGuesses = userGuess;
+}}
+//Display all the text below the title
+winsText.textContent = "Wins: " + wins;
+lossesText.textContent = "Losses: " + losses;
+leftText.textContent = "Guesses Left: " + guessesLeft;
+userChoiceText.textContent = "Your choices so far: " + yourGuesses;
+
+
     </script>
 </body>
 
